@@ -1,0 +1,150 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{cmap}
+\usepackage[francais]{babel}
+
+\title{\bsc{PLD Agile} \\ Dossier de conception}
+\author{Thibaut \bsc{Fernandez} \and Pierre-Louis \bsc{Lefebvre} \and Fadwa \bsc{Messaoudi} \and Victoire \bsc{Chapelle} \and Victor \bsc{Capelle} \and Joachim \bsc{Dorel} \and Eric \bsc{Jordan}}
+\date{3 Octobre 2016}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\part{Cas d'utilisation}
+
+\section{Charger un plan de ville}
+
+\subsection{Préconditions}
+
+\begin{itemize}
+\item Le fichier existe
+\item Le fichier est lisble (notamment vis-à-vis des permissions)
+\item Le fichier contient du XML bien formé et conforme au schéma
+\item Il n'y a pas d'intersections ou de tronçon orphelins
+\end{itemize}
+
+\subsection{Scénario principal}
+
+\begin{enumerate}
+\item Le système demande à l'utilisateur un URI vers le fichier XML
+\item L'utilisateur saisit l'URI du fichier
+\item Le système parse le fichier pour peupler un DOM
+\item Le DOM est analysé par le système pour générer la représentation du plan en mémoire conforme au modèle du domaine
+\item Le plan en mémoire est converti en représentation graphique affichée à l'écran
+\end{enumerate}
+
+\subsection{Scénarii alternatifs}
+
+\begin{itemize}
+\item[3a] Le fichier n'existe pas, n'est pas lisible ou n'est pas un fichier XML bien formé
+\begin{enumerate}
+\item Le système affiche un message d'erreur
+\item Le système demande la saisie d'une autre URI de fichier
+\end{enumerate}
+
+\item[3b] Le fichier n'est pas conforme au schéma
+\begin{enumerate}
+\item Le système affiche un message d'erreur
+\item Le système demande la saisie d'une autre URI de fichier
+\end{enumerate}
+
+\item[4a] Le plan contient un tronçon ou une intersection orphelin
+\begin{enumerate}
+\item Le système affiche un message d'erreur
+\item Le système demande la saisie d'une autre URI de fichier
+\end{enumerate}
+\end{itemize}
+
+\section{Charger une demande de livraison}
+
+\subsection{Préconditions}
+
+\begin{itemize}
+\item Le fichier existe
+\item Le fichier est lisble (notamment vis-à-vis des permissions)
+\item Le fichier contient du XML bien formé et conforme au schéma
+\item L'utilisateur a chargé un plan de ville au préalable
+\item Toutes les intersections mentionnées dans le fichier XML de la demande de livraison existent dans le plan de la ville
+\end{itemize}
+
+\subsection{Scénario principal}
+
+\begin{enumerate}
+\item Le système demande à l'utilisateur un URI vers le fichier XML
+\item L'utilisateur saisit l'URI du fichier
+\item Le système parse le fichier pour peupler un DOM
+\item Le système récupère l'adresse de l'entrepôt à partir du DOM ainsi que l'heure de départ de la tournée
+\item Le DOM est analysé par le système pour générer la liste des livraisons conforme au modèle du domaine
+\item Les emplacements de livraisons sont affichés sur le plan graphique
+\end{enumerate}
+
+\subsection{Scénarii alternatifs}
+
+\begin{itemize}
+\item[3a] Le fichier n'existe pas, n'est pas lisible ou n'est pas un fichier XML bien formé
+\begin{enumerate}
+\item Le système affiche un message d'erreur
+\item Le système demande la saisie d'une autre URI de fichier
+\end{enumerate}
+
+\item[3b] Le fichier n'est pas conforme au schéma
+\begin{enumerate}
+\item Le système affiche un message d'erreur
+\item Le système demande la saisie d'une autre URI de fichier
+\end{enumerate}
+
+\item[4a] L'adresse de l'entrepôt ne correspond à aucune intersection
+\begin{enumerate}
+\item Le système affiche un message d'erreur
+\item Le système demande la saisie d'une autre URI de fichier
+\end{enumerate}
+
+\item[4b] L'heure de départ est mal formatée (pas au format (h)h:(m)m:(s)s)
+\begin{enumerate}
+\item Le système affiche un message d'erreur
+\item Le système demande la saisie d'une autre URI de fichier
+\end{enumerate}
+
+\item[5a] L'adresse d'un des lieux de livraison ne correspond à aucune intersection
+\begin{enumerate}
+\item Le système affiche un message d'erreur
+\item Le système demande la saisie d'une autre URI de fichier
+\end{enumerate}
+
+\item[5b] L'heure d'une des plages horaires de livraison est mal formatée (pas au format (h)h:(m)m:(s)s)
+\begin{enumerate}
+\item Le système affiche un message d'erreur
+\item Le système demande la saisie d'une autre URI de fichier
+\end{enumerate}
+\end{itemize}
+
+\section{Calculer une tournée}
+
+\subsection{Préconditions}
+
+\begin{itemize}
+\item L'utilisateur a chargé un plan de ville
+\item L'utilisateur a chargé une demande de livraisons
+\end{itemize}
+
+\subsection{Scénario principal}
+
+\begin{enumerate}
+\item L'utilisateur demande à calculer une tournée de livraison
+\item Le système analyse les données chargées au préalable pour déterminer la tournée optimale
+\item La tournée proposée est affichée sur le plan graphique (les tronçons sur le chemin de la tournée sont mis en surbrillance et une flèche indique le sens de criculation)
+\end{enumerate}
+
+%\subsection{Scénarii alternatifs}
+
+%\begin{itemize}
+%\item[2a] Le système ne trouve pas de tournée satisfaisant les plages horaires imposées
+%\begin{enumerate}
+%\item Le système affiche un message d'erreur
+%\item Aucune tournée n'est affichée et le système revient dans l'état précédent
+%\end{enumerate}
+%\end{itemize}
+
+\end{document}
