@@ -8,7 +8,7 @@
  * 
  * @authors Thibaut FERNANDEZ
  * @authors Pierre-Louis LEFEBVRE
- * @authors Fada MESSAOUDI
+ * @authors Fadwa MESSAOUDI
  * @authors Joachim DOREL
  * @authors Victor CAPELLE
  * @authors Victoire CHAPELLE

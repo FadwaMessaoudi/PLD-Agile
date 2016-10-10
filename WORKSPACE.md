@@ -6,6 +6,9 @@
 - (http://www.stack.nl/~dimitri/doxygen/download.html)[Doxygen]
 - (https://miktex.org/download)[MiKTeX]
 - (https://tortoisegit.org/download/)[Tortoise Git]
+- (http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)[Java 8 JDK]
+- (http://staruml.io/download)[Star UML]
+- (https://balsamiq.com/download/)[Balsamiq Mockup]
 
 ## Web services
 
@@ -21,3 +24,10 @@ Eclipse plugins are installed via Eclipse Marketplace.
 - TeXclipse (search for "latex")
 - Eclox
 - EGit (search for "git")
+- Modeling/Papyrus (from regular software install)
+- EclEmma
+
+## Linux users
+
+- Use package `git` instead of Tortoise git
+- Use package `texlive` instead of MiKTeX
