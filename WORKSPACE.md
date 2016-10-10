@@ -31,3 +31,9 @@ Eclipse plugins are installed via Eclipse Marketplace.
 
 - Use package `git` instead of Tortoise git
 - Use package `texlive` instead of MiKTeX
+
+## Code conventions
+
+We will be using Oracle's code conventions.
+
+http://www.oracle.com/technetwork/java/codeconventions-150003.pdf
