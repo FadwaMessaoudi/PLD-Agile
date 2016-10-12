@@ -1,4 +1,8 @@
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%     GLOSSARY: Geography                                             %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newglossaryentry{geography-map}{
 	type={geography},
 	name={Plan {\it (Map)}},
@@ -54,4 +58,24 @@
 	type={geography},
 	name={Heure de départ de l’entrepôt {\it (Warehouse Departure Time)}},
 	description={Chaque tournée possède une heure de départ, donnée dans le fichier de demande de livraison.}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%     GLOSSARY: File interactions                                    %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newglossaryentry{files-length}{
+	type={files},
+	name={Fichier {\it (File)}},
+	description={Dans le cas de l’utilisation d’une importation de fichier.}
+}
+\newglossaryentry{files-delivery_order}{
+	type={files},
+	name={Demande de livraison {\it (Delivery Order)}},
+	description={Liste des livraisons à effectuer, l’adresse de l’entrepôt ainsi que l’heure de départ de l’entrepôt. L’ensemble de ces données est inclus dans le fichier XML que l’on importe.}
+}
+\newglossaryentry{files-roadmap}{
+	type={files},
+	name={Feuille de route {\it (Roadmap)}},
+	description={Fichier au format texte donnant la liste des livraisons à effectuer, et pour chaque livraison l’adresse de celle-ci, ses heures d’arrivée et de départ, ainsi que l’itinéraire à suivre pour rejoindre cette livraison à partir de la livraison précédente.}
 }
