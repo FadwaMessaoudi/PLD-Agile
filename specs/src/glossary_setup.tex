@@ -1,0 +1,24 @@
+% !TeX root = main.tex
+
+% The purpose of this file is to setup the glossary environment.
+% DO NOT EDIT!
+
+\usepackage[nonumberlist,nopostdot,toc]{glossaries}
+\newglossary*{geography}{Définitions des termes géographiques}
+\newglossary*{files}{Définitions d’interface avec les fichiers
+(XML et texte)}
+\newglossary*{delivery}{Définitions utilisées dans le cadre des
+livraisons}
+\newglossary*{gui}{Définitions pour l’interface graphique}
+
+\input{glossary.tex}
+\makeglossaries
+
+\newcommand{\glsDisplay}{
+	\part{Glossaires}
+	\glsaddall
+	\printglossary[type=geography]
+	\printglossary[type=files]
+	\printglossary[type=delivery]
+	\printglossary[type=gui]
+}

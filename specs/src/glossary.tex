@@ -1,0 +1,57 @@
+
+\newglossaryentry{geography-map}{
+	type={geography},
+	name={Plan {\it (Map)}},
+	description={Plan d’une ville, contenant l’ensemble des tronçons et des
+	intersections.}
+}
+\newglossaryentry{geography-intersection}{
+	type={geography},
+	name={Intersection {\it (Intersection)}},
+	description={Point de regroupement entre différents tronçons. C’est au niveau des intersections que se trouvent les adresses de livraisons.}
+}
+\newglossaryentry{geography-address}{
+	type={geography},
+	name={Adresse {\it (Adress)}},
+	description={Une adresse correspond à une intersection.}
+}
+\newglossaryentry{geography-start_intersection}{
+	type={geography},
+	name={Intersection de départ {\it (Start Intersection)}},
+	description={Pour chaque tronçon, on a une intersection de départ.}
+}
+\newglossaryentry{geography-end_intersection}{
+	type={geography},
+	name={Intersection d'arrivée {\it (End Intersection)}},
+	description={Pour chaque tronçon, on a une intersection d'arrivée.}
+}
+\newglossaryentry{geography-section}{
+	type={geography},
+	name={Tronçon {\it (Section)}},
+	description={Caractérisé par une intersection de début et une intersection de fin (donnant implicitement un sens), un tronçon permet de relier deux intersections. Un tronçon possède aussi une vitesse moyenne (en décimètres/seconde), un nom (le nom de la rue) et une longueur (en décimètres).}
+}
+\newglossaryentry{geography-length}{
+	type={geography},
+	name={Longueur {\it (Length)}},
+	description={Longueur d'un tronçon}
+}
+\newglossaryentry{geography-street_name}{
+	type={geography},
+	name={Nom de la rue {\it (Street Name)}},
+	description={Chaque tronçon possède un nom de rue explicite. L’intérêt de ces noms de rue est pour l’établissement de la feuille de route finale.}
+}
+\newglossaryentry{geography-average_speed}{
+	type={geography},
+	name={Vitesse moyenne {\it (Average Speed)}},
+	description={Chaque tronçon possède une vitesse moyenne, définie en décimètres/seconde.}
+}
+\newglossaryentry{geography-warehouse_address}{
+	type={geography},
+	name={Adresse de l'entrepôt {\it (Warehouse Address)}},
+	description={Chaque tournée commence à un entrepôt et se termine à celui-ci. L’adresse de l’entrepôt est unique (une tournée ne possède qu’un seul entrepôt).}
+}
+\newglossaryentry{geography-warehouse_departure_time}{
+	type={geography},
+	name={Heure de départ de l’entrepôt {\it (Warehouse Departure Time)}},
+	description={Chaque tournée possède une heure de départ, donnée dans le fichier de demande de livraison.}
+}
