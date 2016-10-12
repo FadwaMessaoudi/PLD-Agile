@@ -1,4 +1,5 @@
 package fr.insalyon.if4.h4203.pldagile.controller;
+import fr.insalyon.if4.h4203.pldagile.controller.states.State;
 
 /**
  * @brief State-machine Controller
@@ -14,6 +15,8 @@ package fr.insalyon.if4.h4203.pldagile.controller;
  */
 public class Controller {
 
+	private State currentState;
+	
 	/**
 	 * @brief Default constructor for the controller
 	 * 
@@ -26,45 +29,51 @@ public class Controller {
 	/**
 	 * @brief Command to load an XML file
 	 * 
-	 * @toimplement
+	 * This method is called buy the GUI when the user has entered a file URI.
+	 * 
+	 * @param uri The file URI the user has entered, transmitted by the GUI
 	 */
 	public void load(String uri) {
-		//TODO
+		currentState.load(uri);
 	}
 
 	/**
 	 * @brief User acknowledges a message
 	 * 
-	 * @toimplement
+	 * This method is called by the GUI when the user clicks the "OK" button
+	 * on a message box.
 	 */
 	public void acknowledge() {
-		//TODO
+		currentState.acknowledge();
 	}
 
 	/**
 	 * @brief User wants to load a map
 	 * 
-	 * @toimplement
+	 * This method is called when the user clicks the "Load Map" button
+	 * on the GUI
 	 */
 	public void loadStreetMap() {
-		//TODO
+		currentState.loadStreetMap();
 	}
 
 	/**
 	 * @brief User wants to load a delivery order
 	 * 
-	 * @toimplement
+	 * This method is called when the user clicks the "Load Delivery Order"
+	 * button on the GUI
 	 */
 	public void loadOrder() {
-		//TODO
+		currentState.loadOrder();
 	}
 
 	/**
 	 * @brief User wants to compute a delivery round
 	 * 
-	 * @toimplement
+	 * This method is called by the GUI when the user wants to calculate
+	 * a new delivery round.
 	 */
 	public void computeRound() {
-		//TODO
+		currentState.computeRound();
 	}
 }
