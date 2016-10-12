@@ -34,6 +34,17 @@ package fr.insalyon.if4.h4203.pldagile;
  * 
  * This documentation covers the software and code made by the group number H4203.
  * 
+ * @section dev Development
  * 
+ * This software and its accompanying documentation has been developed with the following tools:
+ * 
+ * @li Eclipse Neon IDE for Java developers
+ * @li Java 8 JDK
+ * @li Github
+ * @li Doxygen
+ * @li MiKTeX
+ * @li Google Docs
+ * @li StarUML
+ * @li Balsamiq Mockup
  * 
  */

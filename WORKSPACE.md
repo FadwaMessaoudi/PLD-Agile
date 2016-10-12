@@ -31,6 +31,7 @@ Eclipse plugins are installed via Eclipse Marketplace.
 
 - Use package `git` instead of Tortoise git
 - Use package `texlive` instead of MiKTeX
+- Use package `openjdk-8-jdk` instead of Java JDK
 
 ## Code conventions
 
