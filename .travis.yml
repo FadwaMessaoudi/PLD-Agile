@@ -3,3 +3,4 @@ jdk :
   -openjdk8
   before_install:
   - cd java
+  ant test
