@@ -23,5 +23,13 @@ public class Section {
 	String getName() {
 		return name;
 	}
+	
+	Intersection getIntersectionStart() {
+		return intersectionStart;
+	}
+	
+	Intersection getIntersectionEnd() {
+		return intersectionEnd;
+	}
 
 }

@@ -33,5 +33,13 @@ public class Route {
 		
 		return routeDuration;
 	}
+	
+	Delivery getDeliveryDeparture() {
+		return deliveryDeparture;
+	}
+	
+	Delivery getDeliveryArrival() {
+		return deliveryArrival;
+	}
 
 }
