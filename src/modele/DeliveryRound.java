@@ -14,11 +14,13 @@ public class DeliveryRound {
 	int getDeliveryRoundDuration() {
 		int deliveryRoundDuration = 0;
 		
+		// TODO
 		for(Route route : journey) {
 			deliveryRoundDuration += route.getRouteDuration();
+			deliveryRoundDuration += route.getDeliveryArrival().getDeliveryDuration();
 		}
 		
 		return deliveryRoundDuration;
 	}
-
+	
 }

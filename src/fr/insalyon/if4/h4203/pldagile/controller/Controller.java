@@ -18,6 +18,11 @@ public class Controller {
 	private State currentState;
 	
 	/**
+	 * The only acces to the model from the controller
+	 */
+	private Map map;
+	
+	/**
 	 * @brief Default constructor for the controller
 	 * 
 	 * @toimplement
