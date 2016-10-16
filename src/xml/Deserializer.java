@@ -33,6 +33,7 @@ public class Deserializer {
         */
 	}
 
+	/**
     private static void construireAPartirDeDOMXML(Element noeudDOMRacine, Plan plan) throws ExceptionXML, NumberFormatException{
     	int hauteur = Integer.parseInt(noeudDOMRacine.getAttribute("hauteur"));
         if (hauteur <= 0)
@@ -50,24 +51,29 @@ public class Deserializer {
           	//plan.ajoute(creeRectangle((Element) listeRectangles.item(i)));
        	}
     }
+    */
     
+    /**
     private static void construireAPartirDeDOMXML(Element noeudDOMRacine, DeliveryOrder deliveryOrder) throws ExceptionXML, NumberFormatException{
     	int warehouseAddress = Integer.parseInt(((Element)noeudDOMRacine.getElementsByTagName("entrepot")).getAttribute("adresse"));
-        /*if (entrepot <= 0)
-        	throw new ExceptionXML("Erreur lors de la lecture du fichier : La hauteur du plan doit etre positive");*/
+        if (entrepot <= 0)
+        	throw new ExceptionXML("Erreur lors de la lecture du fichier : La hauteur du plan doit etre positive");
         
        	NodeList listDelivery = noeudDOMRacine.getElementsByTagName("livraison");
        	for (int i = 0; i < listDelivery.getLength(); i++) {
         	deliveryOrder.add(createDelivery((Element) listDelivery.item(i)));
        	}	
     }
+	*/
     
-    private static Delivery createDelivery(Element elt) throws ExceptionXML{
+    /**
+     private static Delivery createDelivery(Element elt) throws ExceptionXML{
     	int address = Integer.parseInt(elt.getAttribute("adresse"));
    		int duration = Integer.parseInt(elt.getAttribute("duree"));
    		
    		return new Delivery(address, duration);
     }
+    */
  
 }
 
