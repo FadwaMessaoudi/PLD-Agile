@@ -12,4 +12,8 @@ public class Delivery {
 	int getDeliveryDuration() {
 		return deliveryDuration;
 	}
+	
+	Intersection getAddress() {
+		return address;
+	}
 }
