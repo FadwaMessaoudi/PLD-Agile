@@ -17,9 +17,11 @@ public class DeliveryOrder {
 	}
 	
 	int[] getDeliveriesDurations() {
-		int[] deliveriesDurations = new int[deliveries.size()];
+		int[] deliveriesDurations = new int[deliveries.size() + 1];
 		
-		for (int i = 0; i<deliveries.size(); i++) {
+		deliveriesDurations[0] = 0;
+		
+		for (int i = 1; i<deliveries.size() + 1; i++) {
 			deliveriesDurations[i] = deliveries.get(i).getDeliveryDuration();
 		}
 		

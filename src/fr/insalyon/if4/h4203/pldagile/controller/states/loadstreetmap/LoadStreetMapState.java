@@ -5,10 +5,9 @@ import fr.insalyon.if4.h4203.pldagile.controller.states.DefaultState;
 import fr.insalyon.if4.h4203.pldagile.controller.states.StatesEnum;
 
 /**
- * @brief Loading a street map file
+ * @brief Displaying a street map
  * 
- * This state is active when the application is loading a street map file.
- * This state should be the startup state of the application.
+ * This state is active after a street map has been loaded.
  * 
  * @author Thibaut FERNANDEZ
  *
