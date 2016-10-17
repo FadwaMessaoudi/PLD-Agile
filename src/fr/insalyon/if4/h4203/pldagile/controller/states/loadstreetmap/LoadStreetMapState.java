@@ -21,7 +21,7 @@ public class LoadStreetMapState extends DefaultState {
 	/**
 	 * @brief Constructor for this state class
 	 * 
-	 * This constructor the entry action for this state,
+	 * This constructor performs the entry action for this state,
 	 * which is showing the map on the interface.
 	 * 
 	 * The GUI is designed to refresh on its own upon updating the OMap instance.
@@ -30,7 +30,6 @@ public class LoadStreetMapState extends DefaultState {
 	 */
 	public LoadStreetMapState(Controller c) {
 		this.controller = c;
-		// TODO Waiting for GUI
 	}
 	
 	/**
