@@ -36,6 +36,7 @@ public class PromptForMapState extends DefaultState {
 	 */
 	public PromptForMapState(Controller c) {
 		this.controller = c;
+		this.controller.getMap();
 		try {
 			Deserializer.load(this.controller.getMap());
 		} catch (ExceptionXML e) {

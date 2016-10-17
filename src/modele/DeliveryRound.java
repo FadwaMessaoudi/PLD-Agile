@@ -6,12 +6,12 @@ public class DeliveryRound {
 	private int warehouseDepartureTime;
 	private List<Route> journey;
 	
-	DeliveryRound(int warehouseDepartureTime, List<Route> journey) {
+	public DeliveryRound(int warehouseDepartureTime, List<Route> journey) {
 		this.warehouseDepartureTime = warehouseDepartureTime;
 		this.journey = journey;
 	}
 	
-	int getDeliveryRoundDuration() {
+	public int getDeliveryRoundDuration() {
 		int deliveryRoundDuration = 0;
 		
 		// TODO

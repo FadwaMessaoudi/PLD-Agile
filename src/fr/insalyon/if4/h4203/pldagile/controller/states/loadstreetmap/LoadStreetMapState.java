@@ -8,6 +8,7 @@ import fr.insalyon.if4.h4203.pldagile.controller.states.StatesEnum;
  * @brief Displaying a street map
  * 
  * This state is active after a street map has been loaded.
+ * It corresponds to a waiting state while the user decides what to do.
  * 
  * @author Thibaut FERNANDEZ
  *
@@ -20,16 +21,15 @@ public class LoadStreetMapState extends DefaultState {
 	/**
 	 * @brief Constructor for this state class
 	 * 
-	 * This constructor the entry action for this state,
+	 * This constructor performs the entry action for this state,
 	 * which is showing the map on the interface.
 	 * 
-	 * @todo Waiting for GUI
+	 * The GUI is designed to refresh on its own upon updating the OMap instance.
 	 * 
 	 * @param c A reference to the controller of the application
 	 */
 	public LoadStreetMapState(Controller c) {
 		this.controller = c;
-		// TODO Waiting for GUI
 	}
 	
 	/**
