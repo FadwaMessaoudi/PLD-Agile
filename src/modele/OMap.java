@@ -17,20 +17,30 @@ import tsp.TSP1;
 public class OMap implements Graph {
 	private DeliveryOrder deliveryOrder;
 	private DeliveryRound deliveryRound;
-	private List<Intersection> intersections;
+	private Map<Integer,Intersection> intersections;
 	private Map<Pair<Integer, Integer>, Section> sections;
 
 	public OMap() {
 
 	}
 
-	public void addIntersection(int x, int y) {
-		intersections.add(new Intersection(x, y));
+	public void addIntersection(int x, int y, int id) {
+		intersections.put(id, new Intersection(x,y,id));
 	}
 
 	public void addSection(int start, int end, int length, int averageSpeed, String name) {
 		sections.put(new Pair<Integer, Integer>(start, end),
 				new Section(name, length, averageSpeed, intersections.get(start), intersections.get(end)));
+	}
+	
+	public void buildeDeliveryOrder(int warehouseId, int[][] deliveries) {
+		deliveryOrder = new DeliveryOrder(0, intersections.get(warehouseId));
+		
+		for(int i = 0; i < deliveries.length; i++) {
+			deliveryOrder.addDelivery(new Delivery(intersections.get(deliveries[i][0]), deliveries[i][1]));
+		}
+		
+		
 	}
 
 	/**
@@ -108,16 +118,14 @@ public class OMap implements Graph {
 			routes = new Route[stopsNumber][stopsNumber];
 			
 			for (int i = 0; i < stopsNumber; i++) {
-				Intersection departure = deliveries.get(i).getAddress();
-				int departureIndice = intersections.indexOf(departure);
+				int departureIndice = deliveries.get(i).getAddress().getId();
 				Disktrat disktrat = new Disktrat(this, departureIndice);
 				disktrat.compute();
 				
 				for (int j = 0; j < stopsNumber; j++) {
 					
 					if (j != i) {
-						Intersection arrival = deliveries.get(j).getAddress();
-						int arrivalIndice = intersections.indexOf(arrival);
+						int arrivalIndice = deliveries.get(j).getAddress().getId();
 						costs[i][j] = disktrat.getDistance(arrivalIndice);
 						List<Section> routeSections = new LinkedList<Section>();
 						
