@@ -17,6 +17,15 @@ import org.xml.sax.SAXException;
 
 public class Deserializer {
 	
+	/**
+	 * Open an xml file and create a map or a delivery order depend on the file 
+	 * @param omap
+	 * @throws ParserConfigurationException
+	 * @throws SAXException
+	 * @throws IOException
+	 * @throws ExceptionXML
+	 */
+	
 	public static void load(OMap omap) throws ParserConfigurationException, SAXException, IOException, ExceptionXML{
 		File xml = XMLFileOpener.getInstance().open(true);
         DocumentBuilder docBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();	
