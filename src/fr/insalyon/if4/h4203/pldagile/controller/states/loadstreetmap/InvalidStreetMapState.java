@@ -31,7 +31,7 @@ public class InvalidStreetMapState extends DefaultState {
 	public InvalidStreetMapState(Controller c) {
 		this.controller = c;
 		this.controller.getWindow().displayMessage(DISPLAY_MESSAGE);
-		this.acknowledge();
+		this.controller.acknowledge();
 	}
 	
 	/**

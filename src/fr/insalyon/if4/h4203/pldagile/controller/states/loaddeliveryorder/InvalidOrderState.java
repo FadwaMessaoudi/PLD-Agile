@@ -31,7 +31,7 @@ public class InvalidOrderState extends DefaultState {
 	public InvalidOrderState(Controller c) {
 		this.controller = c;
 		this.controller.getWindow().displayMessage(DISPLAY_MESSAGE);
-		this.acknowledge();
+		this.controller.acknowledge();
 	}
 
 	
