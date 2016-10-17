@@ -1,5 +1,6 @@
 package fr.insalyon.if4.h4203.pldagile.controller;
 import fr.insalyon.if4.h4203.pldagile.controller.states.State;
+import fr.insalyon.if4.h4203.modele.OMap;
 
 /**
  * @brief State-machine Controller
@@ -15,12 +16,18 @@ import fr.insalyon.if4.h4203.pldagile.controller.states.State;
  */
 public class Controller {
 
+	/**
+	 * @brief The state in which the application is currently
+	 * 
+	 * This is an implementation of the State interface.
+	 * Such implementations can be fund in the States package and its subpackages.
+	 */
 	private State currentState;
 	
 	/**
 	 * The only acces to the model from the controller
 	 */
-	private Map map;
+	private OMap map;
 	
 	/**
 	 * @brief Default constructor for the controller
