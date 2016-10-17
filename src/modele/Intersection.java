@@ -3,10 +3,12 @@ package modele;
 public class Intersection {
 	private int x;
 	private int y;
+	private int id;
 	
-	Intersection(int x, int y) {
+	Intersection(int x, int y, int id) {
 		this.x = x;
 		this.y = y;
+		this.id = id;
 	}
 	
 	int getX() {
@@ -15,6 +17,10 @@ public class Intersection {
 	
 	int getY() {
 		return y;
+	}
+	
+	int getId() {
+		return id;
 	}
 
 }
