@@ -47,4 +47,51 @@ package fr.insalyon.if4.h4203.pldagile;
  * @li StarUML
  * @li Balsamiq Mockup
  * 
+ * @section usage Usage
+ * 
+ * @subsection start Starting the program
+ * 
+ * You will need Java JRE 8 to run the program.
+ * 
+ * On Windows, download it at
+ * <a href="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html">
+ * http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html</a>.
+ * 
+ * On Linux, install the package <tt>openjdk-8-jre</tt> instead.
+ * 
+ * Once you have Java installed, start the application.
+ * Double-click the main JAR file from your file explorer,
+ * or run the following command:
+ * 
+ * <tt>javaw -jar pldagile.jar</tt>
+ * 
+ * The file has its own graphical interface, it is better to use @c javaw instead of @c java.
+ * It cannot be run in pure command line.
+ * 
+ * @subsection step1 Loading a map file
+ * 
+ * When the program starts, it will ask you for an XML file.
+ * You must provide a street map file that will be read to generate the map.
+ * 
+ * Once this map is generated, it will be displayed in the main window.
+ * 
+ * @subsection step2 Loading a delivery order
+ * 
+ * To load the delivery order, click on the button "Load delivery order".
+ * Alternatively, you can input another street map by clicking "Load street map".
+ * 
+ * The program will prompt you for an XML file. Select the delivery order file.
+ * 
+ * Once the file has been read, the position of the warehouse and deliveries
+ * ill be highlighted on the map.
+ * 
+ * @subsection step3 Computing a delivery round
+ * 
+ * Once you have loaded both a street map and a delivery order,
+ * start computing the optimized delivery round by clicking
+ * "Compute delivery round".
+ * 
+ * Alternately, you can load another street map or delivery order
+ * by clicking the appropriate buttons.
+ * 
  */
