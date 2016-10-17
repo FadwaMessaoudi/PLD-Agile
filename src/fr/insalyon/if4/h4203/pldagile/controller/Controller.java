@@ -1,5 +1,6 @@
 package fr.insalyon.if4.h4203.pldagile.controller;
 import fr.insalyon.if4.h4203.pldagile.controller.states.State;
+import fr.insalyon.if4.h4203.pldagile.controller.states.StatesEnum;
 import fr.insalyon.if4.h4203.modele.OMap;
 
 /**
@@ -35,7 +36,7 @@ public class Controller {
 	 * @toimplement
 	 */
 	public Controller() {
-		// TODO
+		currentState = StatesEnum.getStartupState(this);
 	}
 
 	/**
