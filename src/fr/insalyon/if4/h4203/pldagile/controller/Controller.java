@@ -36,7 +36,7 @@ public class Controller {
 	 * @toimplement
 	 */
 	public Controller() {
-		currentState = StatesEnum.getStartupState(this);
+		this.currentState = StatesEnum.getStartupState(this);
 	}
 
 	/**
@@ -47,7 +47,7 @@ public class Controller {
 	 * @param uri The file URI the user has entered, transmitted by the GUI
 	 */
 	public void load(String uri) {
-		currentState.load(uri);
+		this.currentState.load(uri);
 	}
 
 	/**
@@ -57,7 +57,7 @@ public class Controller {
 	 * on a message box.
 	 */
 	public void acknowledge() {
-		currentState.acknowledge();
+		this.currentState.acknowledge();
 	}
 
 	/**
@@ -67,7 +67,7 @@ public class Controller {
 	 * on the GUI
 	 */
 	public void loadStreetMap() {
-		currentState.loadStreetMap();
+		this.currentState.loadStreetMap();
 	}
 
 	/**
@@ -77,7 +77,7 @@ public class Controller {
 	 * button on the GUI
 	 */
 	public void loadOrder() {
-		currentState.loadOrder();
+		this.currentState.loadOrder();
 	}
 
 	/**
@@ -87,6 +87,10 @@ public class Controller {
 	 * a new delivery round.
 	 */
 	public void computeRound() {
-		currentState.computeRound();
+		this.currentState.computeRound();
+	}
+	
+	public void setState(StatesEnum s) {
+		this.currentState = StatesEnum.getState(s, this);
 	}
 }
