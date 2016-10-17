@@ -5,7 +5,7 @@ public class Intersection {
 	private int y;
 	private int id;
 	
-	Intersection(int x, int y, int id) {
+	public Intersection(int x, int y, int id) {
 		this.x = x;
 		this.y = y;
 		this.id = id;

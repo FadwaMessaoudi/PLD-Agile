@@ -7,22 +7,22 @@ public class Route {
 	private Delivery deliveryArrival;
 	private List<Section> sections;
 	
-	Route(Delivery deliveryDeparture, Delivery deliveryArrival) {
+	public Route(Delivery deliveryDeparture, Delivery deliveryArrival) {
 		this.deliveryDeparture = deliveryDeparture;
 		this.deliveryArrival = deliveryArrival;
 	}
 	
-	Route(Delivery deliveryDeparture, Delivery deliveryArrival, List<Section> sections) {
+	public Route(Delivery deliveryDeparture, Delivery deliveryArrival, List<Section> sections) {
 		this.deliveryDeparture = deliveryDeparture;
 		this.deliveryArrival = deliveryArrival;
 		this.sections=sections;
 	}
 	
-	boolean addSection(Section section) {
+	public boolean addSection(Section section) {
 		return sections.add(section);
 	}
 	
-	int getRouteDuration() {
+	public int getRouteDuration() {
 		int routeDuration = 0;
 		
 		for(Section section : sections) {
@@ -38,11 +38,11 @@ public class Route {
 		return routeDuration;
 	}
 	
-	Delivery getDeliveryDeparture() {
+	public Delivery getDeliveryDeparture() {
 		return deliveryDeparture;
 	}
 	
-	Delivery getDeliveryArrival() {
+	public Delivery getDeliveryArrival() {
 		return deliveryArrival;
 	}
 

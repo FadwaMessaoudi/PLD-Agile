@@ -7,16 +7,16 @@ public class DeliveryOrder {
 	private Intersection warehouseAddress;
 	private List<Delivery> deliveries;
 	
-	DeliveryOrder(int warehouseDepartureTime, Intersection warehouseAddress) {
+	public DeliveryOrder(int warehouseDepartureTime, Intersection warehouseAddress) {
 		this.warehouseDepartureTime = warehouseDepartureTime;
 		this.warehouseAddress = warehouseAddress;
 	}
 	
-	boolean addDelivery(Delivery delivery) {
+	public boolean addDelivery(Delivery delivery) {
 		return deliveries.add(delivery);
 	}
 	
-	int[] getDeliveriesDurations() {
+	public int[] getDeliveriesDurations() {
 		int[] deliveriesDurations = new int[deliveries.size() + 1];
 		
 		deliveriesDurations[0] = 0;
@@ -28,15 +28,15 @@ public class DeliveryOrder {
 		return deliveriesDurations;
 	}
 	
-	int getWarehouseDepartureTime() {
+	public int getWarehouseDepartureTime() {
 		return warehouseDepartureTime;
 	}
 	
-	Intersection getWarehouseAddress() {
+	public Intersection getWarehouseAddress() {
 		return warehouseAddress;
 	}
 	
-	List<Delivery> getDeliveries() {
+	public List<Delivery> getDeliveries() {
 		return deliveries;
 	}
 }
