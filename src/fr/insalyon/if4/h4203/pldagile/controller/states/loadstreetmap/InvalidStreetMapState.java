@@ -9,18 +9,18 @@ public class InvalidStreetMapState extends DefaultState {
 	/// @brief Reference to the application controller
 	private final Controller controller;
 	
+	private static final String DISPLAY_MESSAGE = "Error\nInvalid street map file\n\nPlease select another file.";
+	
 	/**
 	 * @brief Constructor for this state class
 	 * 
 	 * This constructor sends a warning to the user, that the XML file is invalid.
 	 * 
-	 * @todo Waiting for GUI
-	 * 
 	 * @param c A reference to the controller of the application
 	 */
 	public InvalidStreetMapState(Controller c) {
 		this.controller = c;
-		// TODO waiting for GUI
+		this.controller.getWindow().displayMessage(DISPLAY_MESSAGE);
 		this.acknowledge();
 	}
 	

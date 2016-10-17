@@ -2,6 +2,7 @@ package fr.insalyon.if4.h4203.pldagile.controller;
 import fr.insalyon.if4.h4203.pldagile.controller.states.State;
 import fr.insalyon.if4.h4203.pldagile.controller.states.StatesEnum;
 import fr.insalyon.if4.h4203.modele.OMap;
+import fr.insalyon.if4.h4203.pldagile.view.Window;
 
 /**
  * @brief State-machine Controller
@@ -25,10 +26,11 @@ public class Controller {
 	 */
 	private State currentState;
 	
-	/**
-	 * The only acces to the model from the controller
-	 */
-	private OMap map;
+	/// @brief The only access to the model from the controller
+	private final OMap map;
+	
+	/// @brief The only access to the GUI from the controller
+	private final Window window;
 	
 	/**
 	 * @brief Default constructor for the controller
@@ -38,6 +40,7 @@ public class Controller {
 	public Controller() {
 		this.currentState = StatesEnum.getStartupState(this);
 		this.map = new OMap();
+		this.window = new Window(this.map, 0, this);
 	}
 
 	/**
@@ -94,9 +97,17 @@ public class Controller {
 	
 	/**
 	 * @brief Returns a reference to the underlying OMap object.
-	 * @return a reference to the OMap instance used by the controller as a hook to the model
+	 * @return A reference to the OMap instance used by the controller as a hook to the model
 	 */
 	public OMap getMap() {
 		return this.map;
+	}
+	
+	/**
+	 * @brief Returns a reference to the underlying Window object.
+	 * @return A reference to the Window instance used by the controller as a hook to the GUI
+	 */
+	public Window getWindow() {
+		return this.window;
 	}
 }

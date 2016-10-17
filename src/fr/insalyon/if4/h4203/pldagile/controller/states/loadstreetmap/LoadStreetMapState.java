@@ -23,7 +23,7 @@ public class LoadStreetMapState extends DefaultState {
 	 * This constructor the entry action for this state,
 	 * which is showing the map on the interface.
 	 * 
-	 * @todo Waiting for GUI
+	 * The GUI is designed to refresh on its own upon updating the OMap instance.
 	 * 
 	 * @param c A reference to the controller of the application
 	 */
