@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Map;
+import java.util.Set;
 
 import javafx.util.Pair;
 
@@ -169,15 +170,15 @@ public class OMap implements Graph {
 
 	@Override
 	public List<Integer> getSuccessors(Integer node) {	
-		List<Integer> successors = new LinkedList<Integer>();
+		List<Integer> successors = new LinkedList<Integer>();	
+		Set<Integer> ints = intersections.keySet();
 		
-		for(Intersection intersection : intersections) {			
-			if(sections.contains(new Pair<node, intersection>)) {
-				successors.add(intersection.getID());
+		for(Integer intersection : ints) {			
+			if(sections.containsValue(new Pair<Integer, Integer>(node, intersection))) {
+				successors.add(intersection);
 			}
-		
+		}
 		
 		return successors;
 	}
-
 }
