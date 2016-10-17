@@ -37,17 +37,7 @@ public class Controller {
 	 */
 	public Controller() {
 		this.currentState = StatesEnum.getStartupState(this);
-	}
-
-	/**
-	 * @brief Command to load an XML file
-	 * 
-	 * This method is called buy the GUI when the user has entered a file URI.
-	 * 
-	 * @param uri The file URI the user has entered, transmitted by the GUI
-	 */
-	public void load(String uri) {
-		this.currentState.load(uri);
+		this.map = new OMap();
 	}
 
 	/**
@@ -92,5 +82,9 @@ public class Controller {
 	
 	public void setState(StatesEnum s) {
 		this.currentState = StatesEnum.getState(s, this);
+	}
+	
+	public OMap getMap() {
+		return this.map;
 	}
 }
