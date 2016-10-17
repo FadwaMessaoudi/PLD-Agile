@@ -143,16 +143,15 @@ public class OMap implements Graph {
 	}
 
 	@Override
-	public void release(int departure, int arrival, int[] predecessors, int[] distances) {
-
+	public void release(Integer departure, Integer arrival, Map<Integer, Integer> predecessors, Map<Integer, Integer> distances) {
 		Section section = sections.get(new Pair<Integer, Integer>(departure, arrival));
 
 		if (section != null) {
 			int cost = section.getPassageDuration();
 
-			if (distances[arrival] > distances[departure] + cost) {
-				distances[arrival] = distances[departure] + cost;
-				predecessors[arrival] = departure;
+			if (distances.get(arrival) > distances.get(departure) + cost) {
+				distances.put(arrival, distances.get(departure) + cost);
+				predecessors.put(arrival, departure);
 			}
 
 		} else {
@@ -161,14 +160,16 @@ public class OMap implements Graph {
 	}
 
 	@Override
-	public int numberOfNodes() {
-		return intersections.size();
-	}
-
-	@Override
-	public int[] getSuccessors(int node) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Integer> getSuccessors(Integer node) {	
+		List<Integer> successors = new LinkedList<Integer>();
+		
+		for(Intersection intersection : intersections) {			
+			if(sections.contains(new Pair<node, intersection>)) {
+				successors.add(intersection.getID());
+			}
+		
+		
+		return successors;
 	}
 
 }
