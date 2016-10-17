@@ -60,7 +60,7 @@ public class LoadOrderState extends DefaultState {
 	 * @todo Link to the computing algorithms
 	 */
 	public void computeRound() {
-		// TODO
+		this.controller.getMap().computeRound();
 		this.controller.setState(StatesEnum.ROUND_COMPUTED_STATE);
 	}
 }

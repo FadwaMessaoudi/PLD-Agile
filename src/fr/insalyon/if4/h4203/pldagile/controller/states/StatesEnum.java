@@ -52,11 +52,13 @@ public enum StatesEnum {
 	 * 
 	 * This method creates a new State object using the reference to the COntroller object passed as a parameter.
 	 * 
+	 * @todo Must be updated everytime a state class is created.
 	 * @param state The state to create, as a value of this enumeration
 	 * @param controller A reference to the Controller object
 	 * @return A new State instance, corresponding to the enum value that was passed as a parameter.
 	 */
 	public static State getState(StatesEnum state, Controller controller) {
+		// TODO Needs to be update everytime a state is created
 		switch(state) {
 		case INVALID_ORDER_STATE:
 			return new InvalidOrderState(controller);

@@ -1,7 +1,7 @@
 package fr.insalyon.if4.h4203.pldagile.controller;
 import fr.insalyon.if4.h4203.pldagile.controller.states.State;
 import fr.insalyon.if4.h4203.pldagile.controller.states.StatesEnum;
-import fr.insalyon.if4.h4203.modele.OMap;
+import fr.insalyon.if4.h4203.pldagile.modele.OMap;
 import fr.insalyon.if4.h4203.pldagile.view.Window;
 
 /**
