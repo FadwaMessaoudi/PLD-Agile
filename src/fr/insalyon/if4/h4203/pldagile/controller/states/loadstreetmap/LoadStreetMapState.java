@@ -8,6 +8,7 @@ import fr.insalyon.if4.h4203.pldagile.controller.states.StatesEnum;
  * @brief Displaying a street map
  * 
  * This state is active after a street map has been loaded.
+ * It corresponds to a waiting state while the user decides what to do.
  * 
  * @author Thibaut FERNANDEZ
  *
