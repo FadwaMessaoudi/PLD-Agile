@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Map;
+import java.util.Set;
 
 import javafx.util.Pair;
 
@@ -151,16 +152,15 @@ public class OMap implements Graph {
 	}
 
 	@Override
-	public void release(int departure, int arrival, int[] predecessors, int[] distances) {
-
+	public void release(Integer departure, Integer arrival, Map<Integer, Integer> predecessors, Map<Integer, Integer> distances) {
 		Section section = sections.get(new Pair<Integer, Integer>(departure, arrival));
 
 		if (section != null) {
 			int cost = section.getPassageDuration();
 
-			if (distances[arrival] > distances[departure] + cost) {
-				distances[arrival] = distances[departure] + cost;
-				predecessors[arrival] = departure;
+			if (distances.get(arrival) > distances.get(departure) + cost) {
+				distances.put(arrival, distances.get(departure) + cost);
+				predecessors.put(arrival, departure);
 			}
 
 		} else {
@@ -169,14 +169,16 @@ public class OMap implements Graph {
 	}
 
 	@Override
-	public int numberOfNodes() {
-		return intersections.size();
+	public List<Integer> getSuccessors(Integer node) {	
+		List<Integer> successors = new LinkedList<Integer>();	
+		Set<Integer> ints = intersections.keySet();
+		
+		for(Integer intersection : ints) {			
+			if(sections.containsValue(new Pair<Integer, Integer>(node, intersection))) {
+				successors.add(intersection);
+			}
+		}
+		
+		return successors;
 	}
-
-	@Override
-	public int[] getSuccessors(int node) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

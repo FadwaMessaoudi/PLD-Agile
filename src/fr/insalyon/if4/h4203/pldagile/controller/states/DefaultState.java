@@ -35,16 +35,6 @@ public class DefaultState implements State {
 	 * @param c A reference to the Controller object
 	 */
 	public DefaultState() {}
-	
-	/**
-	 * @brief Command to load an XML file
-	 * 
-	 * Default implementation that does nothing
-	 * 
-	 * @param uri The file URI the user has entered, transmitted by the GUI
-	 */
-	@Override
-	public void load(String uri) {}
 
 	/**
 	 * @brief User acknowledges a message

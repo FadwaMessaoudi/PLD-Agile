@@ -1,5 +1,6 @@
 package fr.insalyon.if4.h4203.pldagile.controller;
 import fr.insalyon.if4.h4203.pldagile.controller.states.State;
+import fr.insalyon.if4.h4203.pldagile.controller.states.StatesEnum;
 import fr.insalyon.if4.h4203.modele.OMap;
 
 /**
@@ -35,18 +36,8 @@ public class Controller {
 	 * @toimplement
 	 */
 	public Controller() {
-		// TODO
-	}
-
-	/**
-	 * @brief Command to load an XML file
-	 * 
-	 * This method is called buy the GUI when the user has entered a file URI.
-	 * 
-	 * @param uri The file URI the user has entered, transmitted by the GUI
-	 */
-	public void load(String uri) {
-		currentState.load(uri);
+		this.currentState = StatesEnum.getStartupState(this);
+		this.map = new OMap();
 	}
 
 	/**
@@ -56,7 +47,7 @@ public class Controller {
 	 * on a message box.
 	 */
 	public void acknowledge() {
-		currentState.acknowledge();
+		this.currentState.acknowledge();
 	}
 
 	/**
@@ -66,7 +57,7 @@ public class Controller {
 	 * on the GUI
 	 */
 	public void loadStreetMap() {
-		currentState.loadStreetMap();
+		this.currentState.loadStreetMap();
 	}
 
 	/**
@@ -76,7 +67,7 @@ public class Controller {
 	 * button on the GUI
 	 */
 	public void loadOrder() {
-		currentState.loadOrder();
+		this.currentState.loadOrder();
 	}
 
 	/**
@@ -86,6 +77,14 @@ public class Controller {
 	 * a new delivery round.
 	 */
 	public void computeRound() {
-		currentState.computeRound();
+		this.currentState.computeRound();
+	}
+	
+	public void setState(StatesEnum s) {
+		this.currentState = StatesEnum.getState(s, this);
+	}
+	
+	public OMap getMap() {
+		return this.map;
 	}
 }

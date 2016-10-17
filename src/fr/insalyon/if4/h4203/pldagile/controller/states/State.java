@@ -13,9 +13,6 @@ package fr.insalyon.if4.h4203.pldagile.controller.states;
  */
 public interface State {
 
-	/// @brief Command to load an XML file
-	public void load(String uri);
-
 	/// @brief User acknowledges a message
 	public void acknowledge();
 
