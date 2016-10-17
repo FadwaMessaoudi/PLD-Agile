@@ -38,7 +38,7 @@ public class PromptForMapState extends DefaultState {
 		this.controller = c;
 		this.controller.getMap();
 		try {
-			Deserializer.load(this.controller.getMap());
+			Deserializer.loadMap(this.controller.getMap());
 		} catch (ExceptionXML e) {
 			this.controller.setState(StatesEnum.INVALID_STREET_MAP_STATE);
 			return;

@@ -36,7 +36,7 @@ public class PromptForOrderState extends DefaultState {
 	public PromptForOrderState(Controller c) {
 		this.controller = c;
 		try {
-			Deserializer.load(this.controller.getMap());
+			Deserializer.loadDeliveryOrder(this.controller.getMap());
 		} catch (ExceptionXML e) {
 			this.controller.setState(StatesEnum.INVALID_STREET_MAP_STATE);
 			return;
