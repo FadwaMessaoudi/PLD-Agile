@@ -3,6 +3,8 @@
  */
 package fr.insalyon.if4.h4203.pldagile.controller.states;
 
+import fr.insalyon.if4.h4203.pldagile.controller.Controller;
+
 /**
  * @brief Default state for the controller
  * 
@@ -14,6 +16,26 @@ package fr.insalyon.if4.h4203.pldagile.controller.states;
  */
 public class DefaultState implements State {
 
+	/**
+	 * @brief Constructor for this class
+	 * 
+	 * Default implementation that does nothing
+	 * 
+	 * @param c A reference to the Controller object
+	 */
+	public DefaultState(Controller c) {}
+
+	/**
+	 * @brief Constructor for this class
+	 * 
+	 * Do not use the default constructor when instantiating.
+	 * 
+	 * Default implementation that does nothing
+	 * 
+	 * @param c A reference to the Controller object
+	 */
+	public DefaultState() {}
+	
 	/**
 	 * @brief Command to load an XML file
 	 * 
