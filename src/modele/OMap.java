@@ -51,27 +51,12 @@ public class OMap implements Graph {
 	 */
 
 	public void computeRound() {
-		// all the deliveries + the warehouse
-		int stopsNumber = deliveryOrder.getDeliveries().size() + 1;
-		int[][] costs = new int[stopsNumber][stopsNumber];
-
+		int[][] costs = null;
 		Route[][] possiblesRoutes = getShortestRouteForDeliveries(costs);
 
-		int[] stopsDurations = new int[stopsNumber];
-		int[] deliveriesDurations = deliveryOrder.getDeliveriesDurations();
+		int[] stopsDurations = deliveryOrder.getDeliveriesDurations();
+		int stopsNumber = stopsDurations.length;
 		TSP tsp = new TSP1();
-
-		// no stop duration at the warehouse
-		stopsDurations[0] = 0;
-		for (int i = 0; i < stopsNumber - 1; i++) {
-			// TODO : code can be avoid if warehouse is the first delivery in
-			// the deliveyOrder
-			stopsDurations[i] = deliveriesDurations[i];
-
-			for (int j = 0; j < stopsNumber; j++) {
-				costs[i][j] = possiblesRoutes[i][j].getRouteDuration();
-			}
-		}
 
 		tsp.searchSolution(Integer.MAX_VALUE, stopsNumber, costs, stopsDurations);
 
@@ -117,6 +102,7 @@ public class OMap implements Graph {
 			
 			int stopsNumber = deliveries.size();
 			routes = new Route[stopsNumber][stopsNumber];
+			costs = new int[stopsNumber][stopsNumber];
 			
 			for (int i = 0; i < stopsNumber; i++) {
 				int departureIndice = deliveries.get(i).getAddress().getId();
