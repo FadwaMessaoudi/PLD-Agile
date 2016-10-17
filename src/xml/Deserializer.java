@@ -18,7 +18,7 @@ import org.xml.sax.SAXException;
 public class Deserializer {
 	
 	/**
-	 * Open an xml file and create a map or a delivery order depend on the file 
+	 * Open an xml file and create a map 
 	 * @param omap
 	 * @throws ParserConfigurationException
 	 * @throws SAXException
@@ -26,7 +26,7 @@ public class Deserializer {
 	 * @throws ExceptionXML
 	 */
 	
-	public static void load(OMap omap) throws ParserConfigurationException, SAXException, IOException, ExceptionXML{
+	public static void loadMap(OMap omap) throws ParserConfigurationException, SAXException, IOException, ExceptionXML{
 		File xml = XMLFileOpener.getInstance().open(true);
         DocumentBuilder docBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();	
         Document document = docBuilder.parse(xml);
@@ -34,8 +34,26 @@ public class Deserializer {
         
         if (racine.getNodeName().equals("reseau")) 
         	buildMap(racine,omap);
+        else
+        	throw new ExceptionXML("Document non conforme");
+        }
+	
+	/**
+	 * Open an xml file and create a delivery order 
+	 * @param omap
+	 * @throws ParserConfigurationException
+	 * @throws SAXException
+	 * @throws IOException
+	 * @throws ExceptionXML
+	 */
+	
+	public static void loadDeliveryOrder(OMap omap) throws ParserConfigurationException, SAXException, IOException, ExceptionXML{
+		File xml = XMLFileOpener.getInstance().open(true);
+        DocumentBuilder docBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();	
+        Document document = docBuilder.parse(xml);
+        Element racine = document.getDocumentElement();
         
-        else if (racine.getNodeName().equals("demandeDeLivraisons")) 
+        if (racine.getNodeName().equals("demandeDeLivraisons")) 
         	buildDeliveryOrder(racine,omap);
         else
         	throw new ExceptionXML("Document non conforme");
