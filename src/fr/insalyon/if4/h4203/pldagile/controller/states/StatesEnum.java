@@ -38,6 +38,8 @@ public enum StatesEnum {
 	// Round Management states
 	ROUND_COMPUTED_STATE;
 	
+	// TODO Needs to be update everytime a state is created
+	
 	/**
 	 * @brief Identifies the startup state of the application
 	 * 
