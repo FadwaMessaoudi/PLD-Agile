@@ -17,7 +17,6 @@ public class DeliveryRound {
 		// TODO
 		for(Route route : journey) {
 			deliveryRoundDuration += route.getRouteDuration();
-			deliveryRoundDuration += route.getDeliveryArrival().getDeliveryDuration();
 		}
 		
 		return deliveryRoundDuration;
