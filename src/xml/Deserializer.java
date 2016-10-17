@@ -17,7 +17,6 @@ import org.xml.sax.SAXException;
 
 public class Deserializer {
 	
-	//Call this method to build the map or to create the delivery order with an xml file
 	public static void load(OMap omap) throws ParserConfigurationException, SAXException, IOException, ExceptionXML{
 		File xml = XMLFileOpener.getInstance().open(true);
         DocumentBuilder docBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();	
@@ -33,7 +32,6 @@ public class Deserializer {
         	throw new ExceptionXML("Document non conforme");
         }
 	
-	//Private method to build the map
     private static void buildMap(Element nodeDOMRacine, OMap omap) throws ExceptionXML, NumberFormatException{
     	
        	NodeList intersectionList = nodeDOMRacine.getElementsByTagName("noeud");
@@ -55,7 +53,6 @@ public class Deserializer {
        	}
     }
     
-    //Private method to build the delivery order
     private static void buildDeliveryOrder(Element nodeDOMRacine, OMap omap) throws ExceptionXML, NumberFormatException{
     	int warehouseAddress = Integer.parseInt(((Element)nodeDOMRacine.getElementsByTagName("entrepot")).getAttribute("adresse"));
         //String warehouseDepartureTime = (String)((Element)nodeDOMRacine.getElementsByTagName("entrepot")).getAttribute("adresse");

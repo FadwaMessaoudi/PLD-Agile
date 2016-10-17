@@ -1,5 +1,6 @@
 package shortestpathalgo;
 
+import java.util.List;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -46,7 +47,7 @@ public class Disktrat {
 
 		while (!visitedNodes.isEmpty()) {
 			minimalDistanceVisited = getMinimalDistanceVisited();
-			int[] successors = graph.getSuccessors(minimalDistanceVisited);
+			List<Integer> successors = graph.getSuccessors(minimalDistanceVisited);
 
 			for (int successor : successors) {
 				if (!completedNodes.contains(successor)) {
