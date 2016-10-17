@@ -6,6 +6,16 @@ import fr.insalyon.if4.h4203.pldagile.controller.states.StatesEnum;
 import fr.insalyon.if4.h4203.pldagile.xml.Deserializer;
 import fr.insalyon.if4.h4203.pldagile.xml.xml.ExceptionXML;
 
+
+/**
+ * @brief Loading a street map file
+ * 
+ * This state is active when the application is loading a street map file.
+ * This state should be the startup state of the application.
+ * 
+ * @author Thibaut FERNANDEZ
+ *
+ */
 public class PromptForMapState extends DefaultState {
 
 	/// @brief Reference to the application controller

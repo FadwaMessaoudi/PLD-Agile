@@ -33,7 +33,7 @@ public class Controller {
 	/**
 	 * @brief Default constructor for the controller
 	 * 
-	 * @toimplement
+	 * Initializes the state of the application as well as the model
 	 */
 	public Controller() {
 		this.currentState = StatesEnum.getStartupState(this);
