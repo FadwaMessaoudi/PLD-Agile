@@ -7,7 +7,7 @@ public class Section {
 	private Intersection intersectionStart;
 	private Intersection intersectionEnd;
 	
-	Section(String name, int length, int averageSpeed, Intersection intersectionStart, Intersection intersectionEnd) {
+	public Section(String name, int length, int averageSpeed, Intersection intersectionStart, Intersection intersectionEnd) {
 		this.name = name;
 		this.length = length;
 		this.averageSpeed = averageSpeed;
@@ -15,20 +15,20 @@ public class Section {
 		this.intersectionEnd = intersectionEnd;
 	}
 	
-	int getPassageDuration() {
+	public int getPassageDuration() {
 		int passageDuration = length / averageSpeed;	
 		return passageDuration;
 	}
 	
-	String getName() {
+	public String getName() {
 		return name;
 	}
 	
-	Intersection getIntersectionStart() {
+	public Intersection getIntersectionStart() {
 		return intersectionStart;
 	}
 	
-	Intersection getIntersectionEnd() {
+	public Intersection getIntersectionEnd() {
 		return intersectionEnd;
 	}
 
