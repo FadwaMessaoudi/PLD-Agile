@@ -80,10 +80,22 @@ public class Controller {
 		this.currentState.computeRound();
 	}
 	
+	/**
+	 * @brief Changes the state the controller is in
+	 * 
+	 * This method is called by other state classes.
+	 * It will change the current state of the controller.
+	 * 
+	 * @param s The enum value that corresponds to the desired state.
+	 */
 	public void setState(StatesEnum s) {
 		this.currentState = StatesEnum.getState(s, this);
 	}
 	
+	/**
+	 * @brief Returns a reference to the underlying OMap object.
+	 * @return a reference to the OMap instance used by the controller as a hook to the model
+	 */
 	public OMap getMap() {
 		return this.map;
 	}
