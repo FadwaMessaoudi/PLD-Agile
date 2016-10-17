@@ -28,7 +28,7 @@ public class Disktrat {
 	 * @param departure
 	 *            the indice of the departure node for the algorithm
 	 */
-	public Disktrat(Graph graph, int departure) {
+	public Disktrat(Graph graph, Integer departure) {
 		this.graph = graph;
 		this.departure = departure;
 		this.predecessors = new HashMap<Integer, Integer>();
@@ -71,8 +71,8 @@ public class Disktrat {
 	 *            the indice of the node
 	 * @return the indice of the predecessor
 	 */
-	public Integer getPredecessor(int i) {
-		return predecessors.get(i);
+	public Integer getPredecessor(Integer node) {
+		return predecessors.get(node);
 	}
 
 	/**
@@ -81,7 +81,7 @@ public class Disktrat {
 	 * @param node : the other node of the graph
 	 * @return the cost of the path
 	 */
-	public Integer getDistance(int node) {
+	public Integer getDistance(Integer node) {
 		return distances.get(node);
 	}
 
