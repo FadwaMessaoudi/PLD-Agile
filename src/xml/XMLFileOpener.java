@@ -48,9 +48,5 @@ public class XMLFileOpener extends FileFilter {// Singleton
 	    	return filename.substring(i+1).toLowerCase();
 	    return null;
    }
-   
-   public static void main(String[] args){
-	   //open(true);
-   }
 }
 

@@ -23,17 +23,21 @@ public class Deserializer {
         DocumentBuilder docBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();	
         Document document = docBuilder.parse(xml);
         Element racine = document.getDocumentElement();
-        /*if (racine.getNodeName().equals("reseau")) {
-           construireAPartirDeDOMXML(racine, plan);
+        if (racine.getNodeName().equals("reseau")) {
+        	//buildMap(racine);
         }
         else if(racine.getNodeName().equals("demandeDeLivraisons"))
-        	construireAPartirDeDOMXML(racine, deliveryOrder);
-        }else
+        	buildDeliveryOrder(racine);
+        }/*else{
         	throw new ExceptionXML("Document non conforme");
-        */
-	}
+        }*/
 
+<<<<<<< HEAD
+	/**
     private static void construireAPartirDeDOMXML(Element noeudDOMRacine, Plan plan) throws ExceptionXML, NumberFormatException{
+=======
+    private static void buildMap(Element noeudDOMRacine, Plan plan) throws ExceptionXML, NumberFormatException{
+>>>>>>> branch 'master' of https://github.com/FadwaMessaoudi/PLD-Agile.git
     	int hauteur = Integer.parseInt(noeudDOMRacine.getAttribute("hauteur"));
         if (hauteur <= 0)
         	throw new ExceptionXML("Erreur lors de la lecture du fichier : La hauteur du plan doit etre positive");
@@ -50,24 +54,48 @@ public class Deserializer {
           	//plan.ajoute(creeRectangle((Element) listeRectangles.item(i)));
        	}
     }
+    */
     
+<<<<<<< HEAD
+    /**
     private static void construireAPartirDeDOMXML(Element noeudDOMRacine, DeliveryOrder deliveryOrder) throws ExceptionXML, NumberFormatException{
+=======
+    private static void buildDeliveryOrder(Element noeudDOMRacine) throws ExceptionXML, NumberFormatException{
+>>>>>>> branch 'master' of https://github.com/FadwaMessaoudi/PLD-Agile.git
     	int warehouseAddress = Integer.parseInt(((Element)noeudDOMRacine.getElementsByTagName("entrepot")).getAttribute("adresse"));
-        /*if (entrepot <= 0)
-        	throw new ExceptionXML("Erreur lors de la lecture du fichier : La hauteur du plan doit etre positive");*/
+<<<<<<< HEAD
+        if (entrepot <= 0)
+        	throw new ExceptionXML("Erreur lors de la lecture du fichier : La hauteur du plan doit etre positive");
+=======
+        //String warehouseDepartureTime = (String)((Element)noeudDOMRacine.getElementsByTagName("entrepot")).getAttribute("adresse");
+>>>>>>> branch 'master' of https://github.com/FadwaMessaoudi/PLD-Agile.git
         
        	NodeList listDelivery = noeudDOMRacine.getElementsByTagName("livraison");
+       	int listDeliveries [][] = new int [listDelivery.getLength()][2];
        	for (int i = 0; i < listDelivery.getLength(); i++) {
-        	deliveryOrder.add(createDelivery((Element) listDelivery.item(i)));
-       	}	
+       		listDeliveries[i][0] = Integer.parseInt(((Element)listDelivery).getAttribute("adresse"));
+       		listDeliveries[i][1] = Integer.parseInt(((Element)listDelivery).getAttribute("duree"));
+       	}
+       	//Send to DeliveryOrder warehouse's address and the deliveries
+       	//DeliveryOrder.create(warehouseAddress,listDeliveries);
+       	
+       	
+       	
     }
+	*/
     
-    private static Delivery createDelivery(Element elt) throws ExceptionXML{
+<<<<<<< HEAD
+    /**
+     private static Delivery createDelivery(Element elt) throws ExceptionXML{
     	int address = Integer.parseInt(elt.getAttribute("adresse"));
    		int duration = Integer.parseInt(elt.getAttribute("duree"));
    		
    		return new Delivery(address, duration);
     }
+    */
+=======
+    
+>>>>>>> branch 'master' of https://github.com/FadwaMessaoudi/PLD-Agile.git
  
 }
 
