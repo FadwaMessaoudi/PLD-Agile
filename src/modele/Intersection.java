@@ -32,7 +32,7 @@ public class Intersection {
 	 * @brief Get the x coordinate of the intersection
 	 * @return The x coordinate of the intersection
 	 */
-	int getX() {
+	public int getX() {
 		return x;
 	}
 	
@@ -40,7 +40,7 @@ public class Intersection {
 	 * @brief Get the y coordinate of the intersection
 	 * @return The y coordinate of the intersection
 	 */
-	int getY() {
+	public int getY() {
 		return y;
 	}
 	
@@ -48,7 +48,7 @@ public class Intersection {
 	 * @brief Get the id of the intersection
 	 * @return The id of the intersection
 	 */
-	int getId() {
+	public int getId() {
 		return id;
 	}
 
