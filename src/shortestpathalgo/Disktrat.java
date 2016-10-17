@@ -1,8 +1,6 @@
 package shortestpathalgo;
 
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 /**
@@ -14,8 +12,8 @@ import java.util.Set;
 public class Disktrat {
 	private Graph graph;
 	private int departure;
-	private Map<Integer, Integer> predecessors;
-	private Map<Integer, Integer> distances;
+	private int[] predecessors;
+	private int[] distances;
 	private Set<Integer> completedNodes;
 	private Set<Integer> visitedNodes;
 
@@ -30,8 +28,8 @@ public class Disktrat {
 	public Disktrat(Graph graph, int departure) {
 		this.graph = graph;
 		this.departure = departure;
-		this.predecessors = new HashMap<Integer, Integer>();
-		this.distances = new HashMap<Integer, Integer>();
+		this.predecessors = new int[graph.numberOfNodes()];
+		this.distances = new int[graph.numberOfNodes()];
 		this.completedNodes = new HashSet<Integer>();
 		this.visitedNodes = new HashSet<Integer>();
 	}
@@ -40,8 +38,12 @@ public class Disktrat {
 	 * compute the Disktrat algorithm
 	 */
 	public void compute() {
+
+		for(int i = 0; i < distances.length; i++) {
+			distances[i] = Integer.MAX_VALUE;
+		}
 		
-		distances.put(departure, 0);
+		distances[departure] = 0;
 		int minimalDistanceVisited = 0;
 
 		while (!visitedNodes.isEmpty()) {
@@ -70,37 +72,32 @@ public class Disktrat {
 	 *            the indice of the node
 	 * @return the indice of the predecessor
 	 */
-	public Integer getPredecessor(int i) {
-		return predecessors.get(i);
+	public int getPredecessor(int i) {
+		return predecessors[i];
 	}
 
 	/**
 	 * after calling compute(), give the distance from the departure to the
 	 * others nodes of the graph
-	 * @param node : the other node of the graph
+	 * @param node : the other node of th graph
 	 * @return the cost of the path
 	 */
-	public Integer getDistance(int node) {
-		return distances.get(node);
+	public int getDistance(int node) {
+		return distances[node];
 	}
 
-	private Integer getMinimalDistanceVisited() {
+	private int getMinimalDistanceVisited() {
 
-		Integer minimalDistanceVisited = null;
+		int minimalDistanceVisited = 0;
 
 		if (visitedNodes.contains(departure)) {
 			minimalDistanceVisited = departure;
 
 		} else {
-			for (Integer node : visitedNodes) {
+			for (int node : visitedNodes) {
 				// if a minimal Distance visited node ins't already defined
-				if (distances.get(node) != null) { // distance of node isn't infinite
-					if (minimalDistanceVisited == null) {
-						minimalDistanceVisited = node;
-					}
-					else if (distances.get(node) < distances.get(minimalDistanceVisited)) {
-						minimalDistanceVisited = node;
-					}
+				if (distances[node] < distances[minimalDistanceVisited]) {
+					minimalDistanceVisited = node;
 				}
 			}
 		}
