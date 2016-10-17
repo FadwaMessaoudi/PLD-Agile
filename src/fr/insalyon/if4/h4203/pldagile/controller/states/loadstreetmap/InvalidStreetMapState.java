@@ -2,6 +2,7 @@ package fr.insalyon.if4.h4203.pldagile.controller.states.loadstreetmap;
 
 import fr.insalyon.if4.h4203.pldagile.controller.Controller;
 import fr.insalyon.if4.h4203.pldagile.controller.states.DefaultState;
+import fr.insalyon.if4.h4203.pldagile.controller.states.StatesEnum;
 
 public class InvalidStreetMapState extends DefaultState {
 
@@ -23,7 +24,12 @@ public class InvalidStreetMapState extends DefaultState {
 		this.acknowledge();
 	}
 	
+	/**
+	 * @brief User acknowledges error
+	 * 
+	 * This method is called by the GUI when the user presses the "OK" button.
+	 */
 	public void acknowledge() {
-		
+		this.controller.setState(StatesEnum.PROMPT_FOR_MAP_STATE);
 	}
 }
