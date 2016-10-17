@@ -2,6 +2,9 @@ package fr.insalyon.if4.h4203.pldagile.controller.states.loadstreetmap;
 
 import fr.insalyon.if4.h4203.pldagile.controller.Controller;
 import fr.insalyon.if4.h4203.pldagile.controller.states.DefaultState;
+import fr.insalyon.if4.h4203.pldagile.controller.states.StatesEnum;
+import fr.insalyon.if4.h4203.pldagile.xml.Deserializer;
+import fr.insalyon.if4.h4203.pldagile.xml.xml.ExceptionXML;
 
 public class PromptForMapState extends DefaultState {
 
@@ -18,13 +21,17 @@ public class PromptForMapState extends DefaultState {
 	 * @li If parsing fails, change the state to InvalidStreetMapState
 	 * @li If parsing suceeds, change the state to LoadStreetMapState
 	 * 
+	 * @param c A reference to the controller of the application
+	 * 
 	 */
 	public PromptForMapState(Controller c) {
 		this.controller = c;
-		
-	}
-	
-	public void load(String uri) {
-		
+		try {
+			Deserializer.load(this.controller.getMap());
+		} catch (ExceptionXML e) {
+			this.controller.setState(StatesEnum.INVALID_STREET_MAP_STATE);
+			return;
+		}
+		this.controller.setState(StatesEnum.LOAD_STREET_MAP_STATE);
 	}
 }
