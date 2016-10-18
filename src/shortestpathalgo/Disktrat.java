@@ -14,7 +14,7 @@ import java.util.Set;
  */
 public class Disktrat {
 	private Graph graph;
-	private int departure;
+	private Integer departure;
 	private Map<Integer, Integer> predecessors;
 	private Map<Integer, Integer> distances;
 	private Set<Integer> completedNodes;
@@ -44,7 +44,8 @@ public class Disktrat {
 		
 		distances.put(departure, 0);
 		int minimalDistanceVisited = 0;
-
+		visitedNodes.add(departure);
+		
 		while (!visitedNodes.isEmpty()) {
 			minimalDistanceVisited = getMinimalDistanceVisited();
 			List<Integer> successors = graph.getSuccessors(minimalDistanceVisited);
