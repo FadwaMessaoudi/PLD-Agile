@@ -21,7 +21,7 @@ public class Disktrat {
 	private Set<Integer> visitedNodes;
 
 	/**
-	 * Constructor of the Disktrat calculator
+	 * Constructor of the Disktrat computer
 	 * 
 	 * @param graph
 	 *            the graph on which the algorithm will be applied

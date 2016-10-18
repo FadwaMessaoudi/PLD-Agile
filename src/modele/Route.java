@@ -62,10 +62,6 @@ public class Route {
 		
 		routeDuration += deliveryArrival.getDeliveryDuration();
 		
-		// TODO
-		// duration of the delivery count in the TSP (param durations)
-		// routeDuration += deliveryArrival.getDeliveryDuration();
-		
 		return routeDuration;
 	}
 	
