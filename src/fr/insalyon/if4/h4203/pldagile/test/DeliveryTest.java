@@ -10,10 +10,10 @@ public class DeliveryTest {
 
 	@Test
 	public void deliveryTest() {
-		Intersection intersection = new Intersection(5,5,0);
-		Delivery testDelivery = new Delivery(intersection, 3);
+		Intersection testIntersection = new Intersection(5,5,0);
+		Delivery testDelivery = new Delivery(testIntersection, 3);
 		assertEquals(3, testDelivery.getDeliveryDuration());
-		//TODO Add assert for intersection, to test getDeliveryAddress
+		assertEquals(testIntersection,testDelivery.getAddress());
 	}
 
 }
